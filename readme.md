@@ -17,5 +17,8 @@ For this I created routes using http://gpx.cgtk.co.uk/ and downloaded them in Ga
 
 To emulate sending the data through **status-ping** event, I am attaching interval that cycles through routes and sends data about vehicles periodically.
 
+## Receiving end
 
+Client side listens to **status-ping**s and dispatches actions to Redux store that contains all the data.
 
+Redux reducer takes care of how it all builds up to be easily visually representable.
