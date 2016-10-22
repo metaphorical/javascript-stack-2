@@ -9,11 +9,11 @@ let attachEmitInterval = function(options) {
 
 	setInterval(() => {
 		if(counter <= data.length-1) {
-			options.socket.emit(options.event, data[counter]);
+			options.socket.emit(options.event, Object.assign({}, data[counter], {timestamp: new Date().toISOString()}));
 			counter++;
 		} else {
 			counter = 0;
-			options.socket.emit(options.event, data[counter]);
+			options.socket.emit(options.event, Object.assign({}, data[counter], {timestamp: new Date()}));
 			counter++;
 		}
 	}, options.interval);
