@@ -19,6 +19,6 @@ To emulate sending the data through **status-ping** event, I am attaching interv
 
 ## Receiving end
 
-Client side listens to **status-ping**s and dispatches actions to Redux store that contains all the data.
+Client side listens to **status-ping**s and dispatches actions to Redux store for every 'tick'.
 
 Redux reducer takes care of how it all builds up to be easily visually representable.

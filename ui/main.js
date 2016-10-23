@@ -1,5 +1,8 @@
 import IO from 'socket.io-client';
+import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
+
+import { Dashboard } from './pages/dashboard';
 
 
 let addStatus = (statusObject) => {
@@ -30,10 +33,17 @@ let statusReducer = (state = {}, action) => {
 
 let store = createStore(statusReducer);
 
+/**
+ * Method to (re)render dashboard
+ */
+const render = () => {
+	ReactDOM.render(Dashboard({
+		appData: store.getState()
+	}), window.document.getElementById('App'));
+};
+
 //For now I am not using unsubscribe, but am making it available.
-let unsubscribe = store.subscribe(() =>
-  console.log(store.getState())
-);
+let unsubscribe = store.subscribe(render);
 
 //connecting to same port that is serving the page, so no need ot pass anything to IO
 
