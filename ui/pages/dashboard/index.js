@@ -14,8 +14,8 @@ var DashboardView = React.createClass({
     componentDidMount() {
     },
 	componentDidUpdate() {
-		console.log('ping');
-		console.log(this.props.appData);
+		// console.log('ping');
+		// console.log(this.props.appData);
 	},
 
     render() {

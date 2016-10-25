@@ -1,0 +1,10 @@
+:global {
+	.active {
+		border: 2px solid red;
+	}
+}
+.container {
+	width: 100%;
+
+	color: orange;
+}

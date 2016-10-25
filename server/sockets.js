@@ -48,7 +48,7 @@ const createSocketServer = (server) => {
 				data: dataToEmit,
 				socket: socket,
 				event: 'status-ping',
-				interval: 1000 + 1000 * index
+				interval: 1000 + 500 * index
 			});
 		});
 
